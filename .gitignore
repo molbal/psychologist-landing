@@ -142,6 +142,10 @@ fabric.properties
 
 .idea/
 
+.idea/php.xml
+.idea/deployment.xml
+.idea/psychologist-landing.iml
+
 # Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
 
 *.iml
