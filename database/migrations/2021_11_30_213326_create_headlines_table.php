@@ -18,7 +18,7 @@ class CreateHeadlinesTable extends Migration
 
             $table->string('placement')->unique();
             $table->string('description')->unique();
-            $table->string('value')->unique();
+            $table->text('value');
 
             $table->timestamps();
         });
