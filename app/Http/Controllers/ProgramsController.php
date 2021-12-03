@@ -26,6 +26,10 @@ class ProgramsController extends Controller
     }
 
     public function get($id, $name) {
-        dd($id, $name);
+        $program = Program::whereId($id)->firstOrFail();
+
+        return view('program', [
+           'program' => $program
+        ]);
     }
 }

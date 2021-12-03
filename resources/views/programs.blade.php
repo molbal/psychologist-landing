@@ -17,7 +17,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="row min-vh-xl-100 min-vh-xxl-25">
+        <div class="row  min-vh-xxl-25">
             <div class="col-sm-12 mt-5">
                 <h3>Kiket várok?</h3>
             </div>

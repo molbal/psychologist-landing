@@ -11,6 +11,7 @@
     <!--    Document Title-->
     <!-- ===============================================-->
     <title>@yield('browser-title', config('app.name'))</title>
+    <base href="{{config('app.url')}}">
 
 
     <!-- ===============================================-->
