@@ -57,7 +57,7 @@ class Publication extends Resource
             Trix::make("Leírás/részeltek", "description")->alwaysShow()->showOnIndex(false),
 
             Text::make("Link", "link")->showOnIndex(false),
-            Text::make("ISBN", "isbn")->showOnIndex(false),
+//            Text::make("ISBN", "isbn")->showOnIndex(false),
 
             BelongsTo::make("Szolgáltatás", "program", '\App\Nova\Program')->nullable(true)
 

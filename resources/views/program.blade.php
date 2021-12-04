@@ -24,7 +24,7 @@
                     <h3>Publikációk a témában</h3>
                 </div>
                 @foreach($publications as $publication)
-                    <div class="col-sm-12 col-lg-3 mb-4">
+                    <div class="col-sm-12 col-lg-4 mb-4">
                         @component('components.publication', ['publication' => $publication]) @endcomponent
                     </div>
                 @endforeach
