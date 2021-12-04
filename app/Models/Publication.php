@@ -39,4 +39,28 @@ use Illuminate\Support\Carbon;
 class Publication extends Model
 {
     use HasFactory;
+
+
+    public function program() {
+        return $this->belongsTo(Program::class);
+    }
+
+    public function getTranslatedType() {
+        return __(sprintf("publication.%s", $this->type));
+    }
+
+    public function tidy() {
+        $this->description = str_replace(['<div>','</div>'], '', $this->description);
+    }
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::creating(function ($model) {$model->tidy(); return $model;});
+        static::updating(function ($model) {$model->tidy(); return $model;});
+    }
 }

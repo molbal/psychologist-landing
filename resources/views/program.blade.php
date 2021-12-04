@@ -23,7 +23,11 @@
                 <div class="col-sm-12 mt-5">
                     <h3>Publikációk a témában</h3>
                 </div>
-{{--                <DIV class="fs-1 mb-5 text-base text-justify">{!! $about_guests !!}</DIV>--}}
+                @foreach($publications as $publication)
+                    <div class="col-sm-12 col-lg-3 mb-4">
+                        @component('components.publication', ['publication' => $publication]) @endcomponent
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

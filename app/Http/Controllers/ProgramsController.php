@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Headline;
 use App\Models\Program;
+use App\Models\Publication;
 use Illuminate\Http\Request;
 
 class ProgramsController extends Controller
@@ -28,8 +29,11 @@ class ProgramsController extends Controller
     public function get($id, $name) {
         $program = Program::whereId($id)->firstOrFail();
 
+        $publications = Publication::whereProgramId($id)->orderByDesc('year')->get();
+
         return view('program', [
-           'program' => $program
+           'program' => $program,
+           'publications' => $publications
         ]);
     }
 }

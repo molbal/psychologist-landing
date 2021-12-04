@@ -60,4 +60,8 @@ class Program extends Model
            return self::whereNotNull('visible_from')->whereDate('visible_from', '<', now())->get();
         });
     }
+
+    public function publications() {
+        return $this->hasMany(Publication::class);
+    }
 }

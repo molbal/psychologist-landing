@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\AboutController;
     use App\Http\Controllers\LandingController;
     use App\Http\Controllers\ProgramsController;
     use Illuminate\Support\Facades\Route;
@@ -16,5 +17,6 @@
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
+Route::get('/magamrol/', [AboutController::class, 'index'])->name('about.index');
 Route::get('/szolgaltatasok/', [ProgramsController::class, 'index'])->name('programs.index');
 Route::get('/szolgaltatas/{id}/{name}', [ProgramsController::class, 'get'])->name('programs.get');

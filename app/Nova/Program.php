@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Sparkline;
 use Laravel\Nova\Fields\Text;
@@ -49,6 +50,8 @@ Text::make("Szolgáltatás neve", "name")->required(),
 Trix::make('Szolgáltatás részletes leírása','description')->alwaysShow()->onlyOnForms(),
 Text::make('Szolgáltatás részletes leírása', fn () => $this->description)->asHtml()->hideFromIndex(),
 DateTime::make("Mikortól látszódjon? (Üresen hagyva nem látszik)", "visible_from")->nullable(),
+
+HasMany::make("Kapcsolódó publikációk", 'publications', "\App\Nova\Publication")
         ];
     }
 
