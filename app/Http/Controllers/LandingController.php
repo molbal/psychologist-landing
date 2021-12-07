@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Headline;
+use App\Models\Program;
+use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -20,6 +22,10 @@ class LandingController extends Controller
             $params[$fetch] = Headline::text($fetch);
         }
 
-        return view('home', array_merge([], $params));
+        $publications = Publication::orderByDesc('year')->limit(3)->get();
+        return view('home', array_merge([
+            'publications' => $publications,
+            'programs' => Program::listVisible()->pluck('name')->implode(', ')
+        ], $params));
     }
 }
