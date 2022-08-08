@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * App\Models\Program
@@ -15,6 +16,7 @@ use Illuminate\Support\Carbon;
  * @property string $name
  * @property string|null $visible_from
  * @property string $public
+ * @property string $icon
  * @property string|null $description
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -59,6 +61,10 @@ class Program extends Model
         return \Cache::remember('program.visible', now()->addMinute(), function () {
            return self::whereNotNull('visible_from')->whereDate('visible_from', '<', now())->get();
         });
+    }
+
+    public function getIconUrl() : string {
+        return Storage::disk('public')->url($this->icon);
     }
 
     public function publications() {

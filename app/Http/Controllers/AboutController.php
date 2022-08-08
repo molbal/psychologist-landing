@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GalleryImage;
 use App\Models\Headline;
 use App\Models\Program;
 use App\Models\Publication;
@@ -20,5 +21,11 @@ class AboutController extends Controller
         return view('about_me', array_merge([
             'publications' => $publications
         ], $params));
+    }
+
+    public function gallery() {
+        return view('gallery',[
+            'gallery' => GalleryImage::paginate()
+        ]);
     }
 }

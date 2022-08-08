@@ -23,7 +23,7 @@
         <!--/.bg-holder-->
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-5 col-xxl-4"><img class="w-100 rounded shadow" style="height: 300px; object-fit: cover;" src="{{asset('assets/img/gallery/2.jpg')}}" alt="..."></div>
+                <div class="col-md-5 col-xxl-4"><img class="w-100 rounded shadow" src="{{\App\Models\Program::first()->getIconUrl()}}" alt="..."></div>
                 <div class="col-md-7 col-xxl-8 text-center text-md-start">
                     <h2 class="fw-bold text-light mb-4 mt-4 mt-lg-0">Szolgáltatásaim</h2>
                     <p class="text-light">Az alábbi szolgáltatásaim vehetik igénybe: {{$programs}}</p>

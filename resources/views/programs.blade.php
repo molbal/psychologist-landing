@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h3>Módszerek</h3>
+                <h3 class="mb-3">Szolgáltatások</h3>
             </div>
             @foreach($programs as $program)
                 <div class="col-sm-6 col-lg-3 mb-4">

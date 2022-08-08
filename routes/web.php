@@ -21,4 +21,5 @@ Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::get('/magamrol/', [AboutController::class, 'index'])->name('about.index');
 Route::get('/idopontfoglalas/', [ContactController::class, 'index'])->name('contact.index');
 Route::get('/szolgaltatasok/', [ProgramsController::class, 'index'])->name('programs.index');
+Route::get('/galeria/', [AboutController::class, 'gallery'])->name('gallery.index');
 Route::get('/szolgaltatas/{id}/{name}', [ProgramsController::class, 'get'])->name('programs.get');

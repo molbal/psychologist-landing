@@ -12,7 +12,7 @@
                     <h2>{{$program->name}}</h2>
                 </div>
                 <div class="col-sm-12 col-md-3">
-                    <img class="rounded shadow mb-0" src="assets/img/gallery/{{$program->id}}.jpg" alt="{{$program->name}}" style="width: 100%; height: 400px; object-fit: cover;">
+                    <img class="rounded shadow mb-0" src="{{$program->getIconUrl()}}"  alt="{{$program->name}}" style="width: 100%; height: 400px; object-fit: cover;">
                 </div>
                 <div class="col-sm-12 col-md-9">
 

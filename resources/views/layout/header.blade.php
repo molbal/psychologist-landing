@@ -9,6 +9,7 @@
                 <li class="nav-item px-2"><a class="nav-link" href="{{route('home')}}">Kezdőoldal</a></li>
                 <li class="nav-item px-2"><a class="nav-link" href="{{route('about.index')}}">Magamról</a></li>
                 <li class="nav-item px-2"><a class="nav-link" href="{{route('programs.index')}}">Szolgáltatások</a></li>
+                <li class="nav-item px-2"><a class="nav-link" href="{{route('gallery.index')}}">Galéria</a></li>
 {{--                <li class="nav-item px-2"><a class="nav-link" href="#findUs">Publikációk</a></li>--}}
             </ul><a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="{{route('contact.index')}}">Időpontfoglalás</a>
         </div>
